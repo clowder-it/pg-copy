@@ -1,4 +1,6 @@
-# pg-copy-db
+# pg-copy
+
+Docker image for copying databases with a cronjob
 
 # Example:
 
@@ -17,6 +19,6 @@ docker exec -it consul_web bin/rake db:migrate
 
 Create a copy of the database
 ```
-docker build -t codefornl/pg-copy-db:1.0 .
-docker run --name=consul_copy -e POSTGRES_HOST=consul_db -e SOURCE_DATABASE=consul_development -e TARGET_DATABASE=consul_test --net=consul_nw -d codefornl/pg-copy-db:1.0
+docker build -t clowder/pg-copy:1.0 .
+docker run --name=consul_copy -e POSTGRES_HOST=consul_db -e SOURCE_DATABASE=consul_development -e TARGET_DATABASE=consul_test --net=consul_nw -d clowder/pg-copy:1.0
 ```
